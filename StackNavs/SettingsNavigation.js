@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import SettingsPage from "../src/pages/SettingsPage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import SettingsPage from "../src/Tabs/SettingsStack/SettingsPage";
 
 const Stack = createNativeStackNavigator();
 
