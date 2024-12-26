@@ -33,7 +33,7 @@ export default function HomePage() {
     navigation.navigate("ItemDetails", item);
   };
   const productslist = StoreList.map((item) => (
-    <ProductCard handelPress={handelPress} item={item} />
+    <ProductCard key={item.id} handelPress={handelPress} item={item} />
   ));
   return (
     <SafeAreaProvider>
@@ -43,7 +43,9 @@ export default function HomePage() {
             <FlatList
               horizontal={true}
               data={scrollList}
-              renderItem={({ item }) => <Item title={item.title} />}
+              renderItem={({ item }) => (
+                <Item key={item.id} title={item.title} />
+              )}
               keyExtractor={(item) => item.id}
             />
           </View>

@@ -2,11 +2,11 @@ import { Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SettingsPage from "./src/Tabs/SettingsStack/SettingsPage";
-import HomePage from "./src/Tabs/HomeStack/HomePage";
-import ItemDetails from "./src/Tabs/HomeStack/ItemDetails";
-import ProfilePage from "./src/Tabs/ProfileStack/ProfilePage";
-import ProfileEditPage from "./src/Tabs/ProfileStack/ProfileEditPage";
+import SettingsPage from "../Tabs/SettingsStack/SettingsPage";
+import HomePage from "../Tabs/HomeStack/HomePage";
+import ItemDetails from "../Tabs/HomeStack/ItemDetails";
+import ProfilePage from "../Tabs/ProfileStack/ProfilePage";
+import ProfileEditPage from "../Tabs/ProfileStack/ProfileEditPage";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
