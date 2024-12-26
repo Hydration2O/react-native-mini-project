@@ -32,7 +32,7 @@ const ProfileEditPage = () => {
         title="submit"
         onPress={() => {
           console.log("name: " + inputValue);
-          console.log("networth: " + number);
+          console.log("networth: " + number + "kd");
         }}
       />
 
