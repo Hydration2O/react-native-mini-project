@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import MyProfile from "./ProfileData";
 const ProfileEditPage = () => {
   const [inputValue, setInputValue] = useState("");
+  const [number, setnumber] = useState("");
   const [toggle, setToggle] = useState(false);
   return (
     <View style={styles.container}>
@@ -19,23 +20,19 @@ const ProfileEditPage = () => {
         onChangeText={(text) => setInputValue(text)} // Handles text change
         placeholder="Name"
       />
-      <Button
-        title="submit"
-        onPress={() => {
-          console.log(inputValue);
-        }}
-      />
+
       <TextInput
-        style={styles.inputField}
+        style={styles.numberinputField}
         keyboardType="numeric"
-        value={inputValue}
-        onChangeText={(text) => setInputValue(text)} // Handles text change
+        value={number}
+        onChangeText={(text) => setnumber(text)} // Handles text change
         placeholder="networth"
       />
       <Button
         title="submit"
         onPress={() => {
-          console.log(inputValue);
+          console.log("name: " + inputValue);
+          console.log("networth: " + number);
         }}
       />
 
@@ -48,7 +45,7 @@ const ProfileEditPage = () => {
             setToggle(false);
           } else setToggle(true);
 
-          console.log(toggle);
+          console.log("alive: " + toggle);
         }}
         value={toggle}
       />
@@ -63,6 +60,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputField: {
+    height: 40,
+    borderColor: "gray",
+    borderWidth: 1,
+    padding: 10,
+  },
+  numberinputField: {
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
