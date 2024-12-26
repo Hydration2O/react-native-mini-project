@@ -1,9 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import StoreList from "../../Components/storeList";
 import ProductCard from "../../Components/ProductCard";
-
+import { useNavigation } from "@react-navigation/native";
+import ItemDetails from "./ItemDetails";
 const scrollList = [
   { id: 1, title: "Notebook" },
   { id: 2, title: "Pen" },
@@ -19,8 +27,14 @@ const Item = ({ title }) => (
   </View>
 );
 
-const productslist = StoreList.map((item) => <ProductCard item={item} />);
 export default function HomePage() {
+  const navigation = useNavigation();
+  const handelPress = (item) => {
+    navigation.navigate("ItemDetails", item);
+  };
+  const productslist = StoreList.map((item) => (
+    <ProductCard handelPress={handelPress} item={item} />
+  ));
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -68,9 +82,9 @@ const styles = StyleSheet.create({
   MainPage: {
     backgroundColor: "red",
     flexDirection: "row",
-    // height: "100%",
+    height: "100%",
+    width: "100%",
     flexWrap: "wrap",
-    // width: "auto",
     alignItems: "center",
     justifyContent: "center",
   },
